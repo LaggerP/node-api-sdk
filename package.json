@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "husky": "^8.0.1",
     "jest": "^28.1.0",
     "jest-config": "^28.1.0",
@@ -69,6 +70,11 @@
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
-    "test:prod": "npm run lint && npm run test -- --no-cache"
-  }
+    "test:prod": "npm run lint && npm run test -- --no-cache",
+    "example:server": "ts-node ./example/server/index.ts"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^3.1.0"
+  },
+  "type": "module"
 }
