@@ -8,7 +8,7 @@ const config = {
         clientId: process.env.CLIENT_ID || "",
         clientSecretId: process.env.CLIENT_SECRET_ID || ""
     },
-    devMode: true,
+    devMode: true, //set true if you want to test your integration with stage environment
 }
 
 const client = new ApiClient(config)
@@ -25,4 +25,12 @@ client.checkout(req)
     .then(r => {
         console.log(r)
     })
+    .catch(err => console.error(err))
+
+client.getOrder('1')
+    .then(r => console.log(r))
+    .catch(err => console.error(err))
+
+client.getFailedNotifications()
+    .then(r => console.log(r))
     .catch(err => console.error(err))
