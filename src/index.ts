@@ -13,8 +13,8 @@ export interface ApiClientConfig {
 }
 
 /**
-* Interface for API Checkout `Request`
-*/
+ * Interface for API Checkout `Request`
+ */
 export interface CheckoutRequest {
 	amount: string
 	description: string
@@ -26,8 +26,8 @@ export interface CheckoutRequest {
 }
 
 /**
-* Interface for API Checkout `Responses`, where `body` values are description & internal code, error has the `error` message and `http_status` value is http code from the API
-*/
+ * Interface for API Checkout `Responses`, where `body` values are description & internal code, error has the `error` message and `http_status` value is http code from the API
+ */
 export interface ResponseBody {
 	http_status: number,
 	body?: any,
@@ -91,9 +91,7 @@ export default class ApiClient {
 				})
 			})
 
-			return {
-				http_status: res.status, body: await res.json()
-			}
+			return { http_status: res.status, body: await res.json() }
 		} catch (error) {
 			return { http_status: 500, error: { error } }
 
@@ -136,10 +134,7 @@ export default class ApiClient {
 					Authorization: `Bearer ${access_token}`
 				}
 			})
-			return {
-				http_status: failedNotifications.status,
-				body: await failedNotifications.json()
-			}
+			return { http_status: failedNotifications.status, body: await failedNotifications.json() }
 		} catch (error) {
 			return { http_status: 500, error: { error } }
 		}
