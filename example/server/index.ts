@@ -21,15 +21,16 @@ const req: CheckoutRequest = {
     callback_success: "https://www.google.com/search?q=success"
 }
 
-client.checkout(req)
-    .then(r => {
-        console.log(r)
-    })
-    .catch(err => console.error(err))
+// client.checkout(req)
+//     .then(r => {
+//         console.log(r)
+//     })
+//     .catch(err => console.error(err))
 
-client.getOrder('1')
+client.getOrder(`${process.env.ORDER_ID}`)
     .then(r => console.log(r))
     .catch(err => console.error(err))
+
 
 client.getFailedNotifications()
     .then(r => console.log(r))
