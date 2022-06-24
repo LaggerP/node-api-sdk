@@ -1,5 +1,4 @@
 import fetch from "isomorphic-unfetch"
-import { Response } from "node-fetch"
 
 export interface ApiCredentials {
 	username: string
@@ -26,7 +25,7 @@ export interface CheckoutRequest {
 }
 
 /**
- * Interface for API Checkout `Responses`, where `body` values are description & internal code, error has the `error` message and `http_status` value is http code from the API
+ * Interface for API Checkout `Responses`, where `body` value is a json object, error has the `error` message and `http_status` value is http code from the API
  */
 export interface ResponseBody {
 	http_status: number,
